@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Loan Application | Micro Green Housing Finance</title>
+  <meta name="description" content="Track your home loan application status online with Micro Green Housing Finance. Enter your application number or mobile to check status." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <script src="js/components.js" defer></script>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span class="current">Track Loan</span></div>
+      <h1>Track Your Loan Application</h1>
+      <p>Enter your application reference number or registered mobile number to check the current status of your loan application.</p>
+    </div>
+  </section>
+
+  <section class="section-py">
+    <div class="container">
+      <div style="max-width:600px;margin:0 auto">
+        <!-- Track Form -->
+        <div class="lead-form-wrap fade-up">
+          <h3>Application Status Check</h3>
+          <p>Enter any one of the following to track your application.</p>
+          <form id="track-form" novalidate>
+            <div class="form-group">
+              <label>Application Reference Number</label>
+              <input type="text" placeholder="e.g. MGHF2024XXXXXX" id="track-ref" />
+            </div>
+            <div style="text-align:center;color:var(--gray-400);margin:-0.25rem 0 1rem;font-size:0.82rem">— OR —</div>
+            <div class="form-group">
+              <label>Registered Mobile Number *</label>
+              <input type="tel" placeholder="10-digit mobile number" id="track-mobile" />
+            </div>
+            <div class="form-group">
+              <label>Date of Birth (for verification) *</label>
+              <input type="date" id="track-dob" />
+            </div>
+            <button type="button" class="btn btn-primary" style="width:100%;justify-content:center" onclick="trackLoan()">Check Status →</button>
+          </form>
+          <!-- Result Placeholder -->
+          <div id="track-result" style="display:none;margin-top:1.5rem">
+            <div style="background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--radius-md);padding:1.5rem">
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+                <div style="width:36px;height:36px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.9rem">📋</div>
+                <div>
+                  <strong style="display:block;font-size:0.9rem;color:var(--charcoal)">Application Status</strong>
+                  <span style="font-size:0.78rem;color:var(--gray-500)">Last updated: Today</span>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:0.6rem;font-size:0.85rem">
+                <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--teal-100)">
+                  <span style="color:var(--gray-500)">Status</span>
+                  <span style="color:var(--teal);font-weight:600">Under Verification ✓</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--teal-100)">
+                  <span style="color:var(--gray-500)">Stage</span>
+                  <span style="font-weight:500">Credit Assessment</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:0.6rem 0">
+                  <span style="color:var(--gray-500)">Next Step</span>
+                  <span style="font-weight:500">Property Evaluation</span>
+                </div>
+              </div>
+              <p style="margin-top:1rem;font-size:0.78rem;color:var(--gray-500)">For detailed updates, contact us at 1800-890-5969 or <a href="mailto:customercare@microgreenhf.com" style="color:var(--teal)">customercare@microgreenhf.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Options -->
+        <div style="margin-top:2rem;text-align:center" class="fade-up delay-1">
+          <p style="color:var(--gray-500);margin-bottom:1.25rem;font-size:0.9rem">Can't find your application? Our team can help.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+            <a href="tel:18008905969" class="btn btn-outline">📞 Call 1800-890-5969</a>
+            <a href="contact.html" class="btn btn-secondary">Send a Query →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function trackLoan() {
+      const ref = document.getElementById('track-ref').value.trim();
+      const mobile = document.getElementById('track-mobile').value.trim();
+      if (!ref && !mobile) {
+        alert('Please enter your Application Reference Number or Mobile Number.');
+        return;
+      }
+      document.getElementById('track-result').style.display = 'block';
+      document.getElementById('track-result').scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+  </script>
+
+</body>
+</html>
