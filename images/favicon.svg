@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background: brand blue -->
+  <rect width="64" height="64" rx="12" fill="#1B5FA3"/>
+  <!-- House outline in white -->
+  <path d="M12 34 L32 16 L52 34 L52 54 L12 54 Z" fill="none" stroke="white" stroke-width="3.5" stroke-linejoin="round"/>
+  <rect x="24" y="42" width="16" height="12" fill="white" rx="1"/>
+  <!-- Leaf accent in brand green -->
+  <ellipse cx="32" cy="18" rx="9" ry="12" fill="#5C8B2E" transform="rotate(-35 32 18)"/>
+  <path d="M26 26 Q32 10 38 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
