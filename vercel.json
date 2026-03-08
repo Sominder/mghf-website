@@ -1,0 +1,51 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/customers/(.*)", "destination": "/customers/$1.html" }
+  ],
+  "routes": [
+    { "src": "/home-loan", "dest": "/home-loan.html" },
+    { "src": "/mortgage-loans", "dest": "/mortgage-loans.html" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/promoters", "dest": "/promoters.html" },
+    { "src": "/board", "dest": "/board.html" },
+    { "src": "/vision", "dest": "/vision.html" },
+    { "src": "/partner-with-us", "dest": "/partner-with-us.html" },
+    { "src": "/empanel-with-us", "dest": "/empanel-with-us.html" },
+    { "src": "/contact", "dest": "/contact.html" },
+    { "src": "/pmay", "dest": "/pmay.html" },
+    { "src": "/track-loan", "dest": "/track-loan.html" },
+    { "src": "/e-mandate", "dest": "/e-mandate.html" },
+    { "src": "/regulatory", "dest": "/regulatory.html" },
+    { "src": "/customers/awareness", "dest": "/customers/awareness.html" },
+    { "src": "/customers/grievance", "dest": "/customers/grievance.html" },
+    { "src": "/customers/fair-practice", "dest": "/customers/fair-practice.html" },
+    { "src": "/customers/mitc", "dest": "/customers/mitc.html" },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"
+      },
+      "continue": true
+    },
+    {
+      "src": "/(css|js|images)/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      },
+      "continue": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
